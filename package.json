@@ -18,5 +18,13 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.0"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "views",
+      "server.js",
+      "routes"
+    ],
+    "ext": "js,json,ejs"
   }
 }

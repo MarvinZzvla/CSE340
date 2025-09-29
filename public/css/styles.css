@@ -1,6 +1,191 @@
-/******* Change Box Model ***************/
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
+
+/* Layout wrapper with checkerboard background */
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: url('/images/site/small_check.jpg') repeat;
+}
+
+/* Screen reader only for accessibility purposes */
+.sr-only {
+  display: none;
+  overflow: hidden;
+}
+
+/*Main Content*/
+#wrapper {
+  max-width: 900px;
+  margin: 16px auto;
+  background: #fff;
+  border: 4px solid #1b6e8c;
+  border-radius: 10px;
+  
+}
+/*Header*/
+#top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+ }
+
+ .siteName a {
+   text-decoration: none;
+   color: #000;
+   font-size: 1.5em;
+   font-weight: bold;
+ }
+
+#tools a {
+  color: #333;
+  text-decoration: none;
+  font-size: .9rem;
+}
+
+/* Primary navigation */
+.primary-nav {
+  background: #0b2233;
+ margin: 0 5px
+}
+.primary-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 8px;
+  display: flex;
+  justify-content: space-around;
+  gap: 12px;
+}
+.primary-nav a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 2px;
+  font-weight: 600;
+}
+.primary-nav a:hover,
+.primary-nav a.active {
+  background: #1b6e8c;
+}
+
+main {
+  padding: 16px;
+}
+
+
+/* Delorean Section*/
+.delorean-section {
+  padding: 0 100px;
+}
+.delorean-media {
+  position: relative;
+  width: 100%;
+}
+
+.delorean-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.vehicle-name {
+  margin: 0 0 6px 0;
+}
+.vehicle-features {
+  padding: 0;
+  margin: 0 0 8px 18px;
+}
+.vehicle-features li {
+  list-style: none;
+  color: rgba(27,110,140,.85);
+  font-weight: bold;
+}
+.delorean_description {
+  position: absolute;
+  left: 16px;
+  top: 18px;
+  background: rgba(255,255,255,0.85);
+  padding: 8px 10px;
+  border-left: 5px solid rgba(27,110,140,.85);
+}
+.cta img {
+  display: inline-block;
+  height: 50px;
+}
+
+/* Upgrades + Reviews */
+.content-columns {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+.content-columns h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+.upgrades, .reviews { flex: 1 1 0; }
+.upgrades-grid {
+  list-style: none;
+  margin: 8px 0 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.upgrades-grid li { flex: 1 1 calc(50% - 6px); }
+.upgrades-grid a {
+  display: block;
+  text-decoration: none;
+  background: #e6f4f9;
+  border: 2px solid #b7e0ed;
+  padding: 8px;
+  color: #0b2233;
+  font-weight: 600;
+  text-align: center;
+}
+.upgrades-grid img {
+  width: 100%;
+  height: 110px;
+  object-fit: scale-down;
+  background: #fff;
+  border: 2px solid #1b6e8c;
+  display: block;
+  margin-bottom: 6px;
+}
+.upgrades-grid span { text-decoration: underline; }
+.reviews ul {
+  margin: 8px 0 0 18px;
+}
+
+/* Footer */
+footer {
+  padding: 0 16px;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .primary-nav {
+    background: #0b2233;
+    margin: 0;
+  }
+
+  .delorean-section { 
+    padding: 0 10px; 
+  }
+
+  .content-columns { flex-direction: column; }
+  .reviews { order: 1; }
+  .upgrades { order: 2; }
+  .delorean_description {
+    left: 8px;
+    top: 8px;
+    max-width: 85%;
+    padding: 6px 8px;
+  }
+  .delorean_description .cta img { 
+    height: 40px; 
+    max-width: 100%;
+  }
+  .delorean_description .vehicle-features {
+    margin: 0 0 4px 12px;
+    font-size: 0.9em;
+  }
 }
